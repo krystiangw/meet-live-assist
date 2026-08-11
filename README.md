@@ -1,16 +1,14 @@
-# Meet Live Assist - site
+# Meet Live Assist - old address
 
-The pages behind https://krystiangw.github.io/meet-live-assist/
+The site moved to **https://meet-live-assist.github.io/** and its own organisation.
 
-| Page | What it is for |
-| --- | --- |
-| `index.html` | the overview: what it does in a call, who it is for, how to install it |
-| `reference.html` | the parts, the full feature list, the markers, the server API |
-| `faq.html` | what it does with your meeting, what you need, what to do when it breaks |
-| `privacy.html` | the privacy policy, rendered from `PRIVACY.md` in the code repo |
-| `sitemap.xml` | submitted to Search Console and Bing; robots.txt on GitHub Pages only counts at the domain root, so it cannot advertise this one |
-| `llms.txt` | the same site for agentic crawlers: what it is, and the two things it does not work without |
-| `*.txt` (32 hex chars) | the IndexNow key. Bing and Yandex read it to confirm we own the path before accepting a submission; deleting it silently stops those submissions working |
+Google assigns one site name and one favicon **per hostname**, never per subdirectory, so every page under
+`krystiangw.github.io/` inherited the name and icon of the site that owns that host's root. A product page
+signed with an unrelated site is worse than no page.
 
-Generated from `docs/` in the extension repo. Edit there and sync, not here: the media and the privacy
-page are built by scripts (`tools/media/`) and hand edits would be overwritten on the next sync.
+What is left here is four redirect stubs: a `canonical` at the new address, an immediate `meta refresh`, and
+`noindex, follow` so the old URLs drop out of the index while still passing the link on. GitHub Pages cannot
+return a 301 for a project path, which is the only reason this is not one.
+
+`index.html` keeps the Search Console verification tag. Removing it would drop the old property, and the old
+property is how the migration gets watched.
